@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADJOVI Mylène Anikè — Technicienne Réseaux & Télécommunications</title>
+<meta name="description" content="Portfolio de ADJOVI Mylène Anikè, diplômée en Licence Système Réseau et Cloud, étudiante en Master Télécommunication à l'ESMT Dakar. Technicienne réseau, stage CELTHIS Bénin.">
+<meta name="keywords" content="ADJOVI Mylène, Mylène Anikè, ADJOVI Mylène Anikè, ESMT Dakar, ESGIS Bénin, technicienne réseau, télécommunication, système réseau cloud, Cotonou, Dakar">
+<meta name="author" content="ADJOVI Mylène Anikè">
+<meta property="og:title" content="ADJOVI Mylène Anikè — Technicienne Réseaux & Télécommunications">
+<meta property="og:description" content="Portfolio de ADJOVI Mylène Anikè, technicienne réseau et étudiante en Master Télécommunication à l'ESMT Dakar.">
+<meta property="og:type" content="website">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0d1117; --bg2: #161b22; --bg3: #1f2733;
+    --accent: #58a6ff; --accent2: #79c0ff;
+    --green: #3fb950; --purple: #bc8cff;
+    --text: #e6edf3; --muted: #8b949e; --border: #30363d; --radius: 10px;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 15px; line-height: 1.7; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(13,17,23,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.75rem 2rem;
+  }
+  .nav-logo { font-weight: 600; font-size: 15px; color: var(--text); }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 1.5rem; }
+  .nav-links a { font-size: 13px; color: var(--muted); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+  .hero {
+    min-height: 92vh; display: flex; flex-direction: column; justify-content: center;
+    padding: 4rem 2rem; max-width: 860px; margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(63,185,80,0.12); border: 1px solid rgba(63,185,80,0.3);
+    color: var(--green); font-size: 12px; padding: 4px 12px;
+    border-radius: 20px; margin-bottom: 1.5rem; width: fit-content;
+  }
+  .hero-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--green); display: inline-block; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.15; margin-bottom: 0.5rem; }
+  .hero h1 .lastname { color: var(--accent); }
+  .hero-sub { font-size: clamp(1rem, 2.5vw, 1.2rem); color: var(--purple); font-weight: 500; margin-bottom: 1rem; }
+  .hero-profil { color: var(--muted); max-width: 580px; font-size: 14px; margin-bottom: 2rem; line-height: 1.8; }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 20px; border-radius: var(--radius); font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; border: none; }
+  .btn-primary { background: var(--accent); color: #0d1117; }
+  .btn-primary:hover { background: var(--accent2); }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .info-strip {
+    display: flex; flex-wrap: wrap; gap: 16px;
+    margin-top: 2rem; padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .info-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+  .info-item strong { color: var(--text); }
+
+  section { padding: 5rem 2rem; max-width: 860px; margin: 0 auto; }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 2rem; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+  .skill-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; transition: border-color 0.2s, transform 0.2s; }
+  .skill-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .skill-icon { font-size: 22px; margin-bottom: 8px; }
+  .skill-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .skill-desc { font-size: 12px; color: var(--muted); }
+
+  .exp-list { display: flex; flex-direction: column; gap: 20px; }
+  .exp-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .exp-title { font-size: 14px; font-weight: 600; color: var(--text); }
+  .exp-company { font-size: 13px; color: var(--accent); margin-top: 2px; }
+  .exp-date { font-size: 11px; color: var(--muted); background: var(--bg3); padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+  .exp-missions { list-style: none; padding: 0; margin-top: 8px; }
+  .exp-missions li { font-size: 13px; color: var(--muted); padding: 3px 0 3px 16px; position: relative; }
+  .exp-missions li::before { content: '›'; position: absolute; left: 0; color: var(--accent); }
+
+  .timeline { position: relative; padding-left: 1.5rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
+  .tl-item { position: relative; margin-bottom: 2rem; }
+  .tl-item::before { content: ''; position: absolute; left: -1.57rem; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+  .tl-date { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .tl-title { font-size: 14px; font-weight: 600; color: var(--text); }
+  .tl-place { font-size: 12px; color: var(--accent); margin-top: 2px; }
+  .tl-desc { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .contact-item { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; display: flex; align-items: center; gap: 12px; transition: border-color 0.2s; }
+  .contact-item:hover { border-color: var(--accent); }
+  .contact-ico { width: 36px; height: 36px; border-radius: 8px; background: rgba(88,166,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .contact-label { font-size: 11px; color: var(--muted); }
+  .contact-val { font-size: 13px; font-weight: 500; color: var(--text); word-break: break-all; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .tag { font-size: 11px; padding: 2px 8px; border-radius: 20px; background: rgba(88,166,255,0.1); color: var(--accent); border: 1px solid rgba(88,166,255,0.2); }
+  .tag-purple { background: rgba(188,140,255,0.1); color: var(--purple); border-color: rgba(188,140,255,0.2); }
+
+  footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+
+  @media (max-width: 600px) {
+    nav { padding: 0.75rem 1rem; } .nav-links { display: none; }
+    section { padding: 3rem 1rem; } .hero { padding: 3rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">ADJOVI Mylène Anikè</div>
+  <div class="nav-links">
+    <a href="#about">Profil</a>
+    <a href="#skills">Compétences</a>
+    <a href="#experience">Expérience</a>
+    <a href="#education">Formation</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero" id="about">
+  <h1>
+    <span class="lastname">ADJOVI</span><br>
+    <span>Mylène Anikè</span>
+  </h1>
+  <div class="hero-sub">Technicienne Réseaux · Master Télécommunication — ESMT Dakar</div>
+  <p class="hero-profil">
+    Technicienne réseau avec une expérience terrain au Bénin, actuellement en Master Télécommunication à l'ESMT Dakar. Béninoise, 21 ans, entre Cotonou et Dakar — je construis mon parcours dans les télécommunications et les réseaux avec une vraie curiosité pour les systèmes qui font fonctionner le monde connecté.
+  </p>
+  <div class="hero-cta">
+    <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Me contacter</button>
+    <button class="btn btn-outline" onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">Voir mon expérience</button>
+  </div>
+  <div class="info-strip">
+    <div class="info-item">📍 <strong>Cotonou, Bénin</strong></div>
+    <div class="info-item">📞 <strong>+22942822446</strong></div>
+    <div class="info-item">✉️ <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ddb9bcb4b1a4b0a4b1b8b3b89dbab0bcb4b1f3beb2b0">[email&#160;protected]</a></strong></div>
+    <div class="info-item">🌍 <strong>Béninoise · 21 ans</strong></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<section id="skills">
+  <div class="section-label">Expertise</div>
+  <div class="section-title">Compétences</div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">🌐</div>
+      <div class="skill-name">Réseaux & Infrastructure</div>
+      <div class="skill-desc">Installation câblage, routeurs, switches, pare-feu, maintenance réseau</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">☁️</div>
+      <div class="skill-name">Système & Cloud</div>
+      <div class="skill-desc">Licence Système Réseau et Cloud, virtualisation</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🔧</div>
+      <div class="skill-name">Dépannage & Support</div>
+      <div class="skill-desc">Diagnostic dysfonctionnements, résolution problèmes connexion</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📋</div>
+      <div class="skill-name">Mise à jour systèmes</div>
+      <div class="skill-desc">Gestion et mise à jour des systèmes informatiques</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">⏱️</div>
+      <div class="skill-name">Organisation</div>
+      <div class="skill-desc">Gestion du temps efficace, rigueur et précision, esprit d'analyse</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🤝</div>
+      <div class="skill-name">Travail en équipe</div>
+      <div class="skill-desc">Motivation personnelle, esprit d'équipe, rigueur professionnelle</div>
+    </div>
+  </div>
+  <div style="margin-top:1.5rem;">
+    <div style="font-size:13px; color:var(--muted); margin-bottom:8px;">Langues</div>
+    <div class="tags">
+      <span class="tag">Français — courant</span>
+      <span class="tag tag-purple">Anglais — débutant (A1)</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="experience">
+  <div class="section-label">Parcours professionnel</div>
+  <div class="section-title">Expérience</div>
+  <div class="exp-list">
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Technicienne de réseau informatique</div>
+          <div class="exp-company">CELTHIS Bénin — Cotonou · Stage</div>
+        </div>
+        <div class="exp-date">Mars 2025 – Mai 2025</div>
+      </div>
+      <ul class="exp-missions">
+        <li>Installation du câblage et des appareils pour établir, réparer et améliorer l'exploitation du réseau</li>
+        <li>Dépannage des problèmes de connexion et de performance du réseau pour les utilisateurs finaux</li>
+        <li>Configuration et maintenance des équipements réseaux (routeurs, switches, pare-feu)</li>
+        <li>Assistance à la mise en place de routeurs et switch pour événements (Eat and Drink)</li>
+        <li>Dépannage postes informatiques : identification du dysfonctionnement, diagnostic et mise en œuvre de solutions adaptées</li>
+        <li>Prise en main et adaptation des équipements aux usages professionnels</li>
+      </ul>
+      <div class="tags" style="margin-top:12px;">
+        <span class="tag">Réseaux</span>
+        <span class="tag">Câblage</span>
+        <span class="tag">Switches</span>
+        <span class="tag">Dépannage</span>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-title">Secrétaire</div>
+          <div class="exp-company">COGEP SARL — Cotonou · Stage</div>
+        </div>
+        <div class="exp-date">Juillet 2023 – Octobre 2023</div>
+      </div>
+      <ul class="exp-missions">
+        <li>Gestion administrative des dossiers : réception, classement, numérisation, saisie informatique</li>
+        <li>Classement et archivage des documents administratifs pour suivi efficace et récupération rapide</li>
+        <li>Accueil physique des visiteurs, gestion des formalités d'entrée et orientation dans les locaux</li>
+      </ul>
+      <div class="tags" style="margin-top:12px;">
+        <span class="tag">Administration</span>
+        <span class="tag">Archivage</span>
+        <span class="tag">Saisie informatique</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="education">
+  <div class="section-label">Parcours académique</div>
+  <div class="section-title">Formation</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-date">Octobre 2025 – Juillet 2026</div>
+      <div class="tl-title">Master 1 Télécommunication</div>
+      <div class="tl-place">ESMT Dakar — Dakar, Sénégal</div>
+      <div class="tl-desc">Formation avancée en télécommunications, réseaux et multimédia numérique.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Octobre 2022 – Août 2025</div>
+      <div class="tl-title">Licence Système Réseau et Cloud</div>
+      <div class="tl-place">ESGIS Bénin — Cotonou, Jéricho</div>
+      <div class="tl-desc">Formation en systèmes d'information, réseaux, infrastructure cloud et virtualisation.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">Me retrouver</div>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-ico">📍</div>
+      <div><div class="contact-label">Localisation</div><div class="contact-val">BP, Cotonou — Bénin</div></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-ico">📞</div>
+      <div><div class="contact-label">Téléphone</div><div class="contact-val">+229 42822446</div></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-ico">✉️</div>
+      <div><div class="contact-label">Email</div><div class="contact-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="214540484d584c584d444f4461464c40484d0f424e4c">[email&#160;protected]</a></div></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-ico">🌍</div>
+      <div><div class="contact-label">Nationalité</div><div class="contact-val">Béninoise · 21 
